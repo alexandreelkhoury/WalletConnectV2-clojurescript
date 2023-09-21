@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$$web3modal$ethereum.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,2CAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,kDAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,0BAAf,GAA4CC,aAAA,CAAc,qBAAd,CAA5C;AACAC,gDAAiDC,CAAAA,OAAjD,GAA2DN,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,0BAA1E;;",
+"sources":["shadow.js.shim.module$$web3modal$ethereum.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$$web3modal$ethereum\");\ngoog.provide(\"module$shadow_js_shim_module$$web3modal$ethereum\");\nshadow.js.shim.module$$web3modal$ethereum = shadow$bridge(\"@web3modal/ethereum\");\nmodule$shadow_js_shim_module$$web3modal$ethereum.default = shadow.js.shim.module$$web3modal$ethereum;\n"],
+"names":["goog","provide","shadow","js","shim","module$$web3modal$ethereum","shadow$bridge","module$shadow_js_shim_module$$web3modal$ethereum","default"]
+}

@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$reagent.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,+BAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,sCAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,cAAf,GAAgCC,aAAA,CAAc,SAAd,CAAhC;AACAC,oCAAqCC,CAAAA,OAArC,GAA+CN,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,cAA9D;;",
+"sources":["shadow.js.shim.module$reagent.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$reagent\");\ngoog.provide(\"module$shadow_js_shim_module$reagent\");\nshadow.js.shim.module$reagent = shadow$bridge(\"reagent\");\nmodule$shadow_js_shim_module$reagent.default = shadow.js.shim.module$reagent;\n"],
+"names":["goog","provide","shadow","js","shim","module$reagent","shadow$bridge","module$shadow_js_shim_module$reagent","default"]
+}

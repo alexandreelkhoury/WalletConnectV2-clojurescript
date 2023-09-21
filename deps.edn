@@ -1,0 +1,11 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        org.clojure/clojurescript {:mvn/version "1.11.121"}
+        reagent/reagent {:mvn/version "1.2.0"}}
+ :aliases
+ {:nREPL-deps
+  {:extra-paths ["dev"]
+   :extra-deps {cider/cider-nrepl {:mvn/version "0.30.0"}}}
+
+  :shadow-cljs
+  {:main-opts ["-m" "shadow.cljs.devtools.cli"]}}}

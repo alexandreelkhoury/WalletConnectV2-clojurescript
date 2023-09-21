@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$$web3modal$react.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,wCAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,+CAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,uBAAf,GAAyCC,aAAA,CAAc,kBAAd,CAAzC;AACAC,6CAA8CC,CAAAA,OAA9C,GAAwDN,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,uBAAvE;;",
+"sources":["shadow.js.shim.module$$web3modal$react.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$$web3modal$react\");\ngoog.provide(\"module$shadow_js_shim_module$$web3modal$react\");\nshadow.js.shim.module$$web3modal$react = shadow$bridge(\"@web3modal/react\");\nmodule$shadow_js_shim_module$$web3modal$react.default = shadow.js.shim.module$$web3modal$react;\n"],
+"names":["goog","provide","shadow","js","shim","module$$web3modal$react","shadow$bridge","module$shadow_js_shim_module$$web3modal$react","default"]
+}

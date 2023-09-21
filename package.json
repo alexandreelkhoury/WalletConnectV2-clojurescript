@@ -1,0 +1,30 @@
+{
+  "scripts": {
+    "deps": "yarn install",
+    "watch": "shadow-cljs watch app;",
+    "release": "shadow-cljs release app;",
+    "server": "shadow-cljs server;",
+    "clean": "rm -rf target; rm -rf public/js/compiled"
+  },
+  "dependencies": {
+    "@wagmi/core": "^1.4.2",
+    "@web3modal/ethereum": "^2.7.1",
+    "@web3modal/html": "^2.7.1",
+    "@web3modal/react": "^2.7.1",
+    "create-react-class": "^15.7.0",
+    "highlight.js": "11.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "reagent": "^1.0.1",
+    "viem": "^1.11.0",
+    "wagmi": "^1.4.2"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.25.5",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "name": "walletconnect",
+  "version": "1.0.0",
+  "main": "index.js"
+}
