@@ -1,6 +1,8 @@
 (ns connectwallet.core
   (:require
    [reagent.dom  :as dom]
+   [reagent.core :as r]
+   ["react-dom/client" :as rdom]
    ["wagmi/chains" :refer (arbitrum mainnet polygon)]
    ["wagmi" :refer (configureChains createConfig WagmiConfig)]
    ["@web3modal/ethereum" :refer (EthereumClient w3mConnectors w3mProvider)]
@@ -35,17 +37,23 @@
 
 (defn Application []
   (js/console.log "Hello world!")
-  [:div
-   [:h1 "Wallet Connect V2"]
-   [:button {:on-click prints} "Print"]
+  [:<>
    [:div
-    [:h2 "my web3 component"]
-    [:WagmiConfig {:config wagmiConfig}
-     [:Web3Button]]
-    [:Web3Modal {:projectId projectId
-                 :ethereumClient ethereumClient}]]])
+    [:h1 "Wallet Connect V2"]
+    [:button {:on-click prints} "Print"]
+    [:div
+     [:h2 "my web3 component"]
+     [:WagmiConfig {:config wagmiConfig}
+      [:Web3Button]]
+     [:Web3Modal {:projectId projectId
+                  :ethereumClient ethereumClient}]]]])
 
-(dom/render [Application] (js/document.getElementById "app"))
+(defn app []
+  (let [container (js/document.getElementById  "app")
+        root (rdom/createRoot container)]
+    (.render root (r/as-element [Application]))))
+
+;; (dom/render [Application] (js/document.getElementById "app"))
 
 ;; (defn openWeb3Modal []
 ;;   (.open (useWeb3Modal)))

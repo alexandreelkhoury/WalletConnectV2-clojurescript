@@ -18,7 +18,7 @@
 
         :modules
         {:main
-         {:init-fn connectwallet.core/Application}}
+         {:init-fn connectwallet.core/app}}
 ;; {:entries [connectwallet.core]} this
 ;; {:init-fn app.core/init} or this
         :js-options
