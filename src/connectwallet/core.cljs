@@ -1,9 +1,8 @@
 (ns connectwallet.core
   (:require ["@wagmi/core" :refer (signMessage getAccount writeContract)]
-            ["@web3modal/ethereum" :refer (EthereumClient w3mConnectors w3mProvider)]
-            ["@web3modal/react" :refer (Web3Button Web3Modal useWeb3Modal)]
+            ["@web3modal/wagmi/react" :refer (defaultWagmiConfig createWeb3Modal useWeb3Modal)]
             ["react-dom/client" :as rdom]
-            ["wagmi" :refer (configureChains createConfig WagmiConfig)]
+            ["wagmi" :refer (WagmiConfig)]
             ["wagmi/chains" :refer (arbitrum mainnet polygon polygonMumbai)]
             [cljs.core.async :refer [go]]
             [cljs.core.async.interop :refer-macros [<p!]]
@@ -108,20 +107,19 @@
 
 (def chains #js[arbitrum mainnet polygon polygonMumbai])
 
-(def publicClient
-  (.-publicClient (configureChains
-                   chains
-                   #js [(w3mProvider #js {:projectId
-                                          projectId})])))
+(def metadata
+  #js
+   {:name "Web3Modal",
+    :description "METAV.RS",
+    :url "https://metav.rs",
+    :icons
+    #js
+     ["https://avatars.githubusercontent.com/u/37784886"]})
 
 (def wagmiConfig
-  (createConfig #js {:autoConnect true,
-                     :connectors (w3mConnectors
-                                  #js {:projectId projectId,
-                                       :chains chains}),
-                     :publicClient publicClient}))
-
-(def ethereumClient (EthereumClient. wagmiConfig chains))
+  (defaultWagmiConfig #js {:chains chains,
+                           :projectId projectId,
+                           :metadata metadata}))
 
 (defn signMessagee []
   (go
@@ -132,6 +130,12 @@
 (defn Getaccounts []
   (let [account (getAccount)]
     (js/console.log account)))
+
+(createWeb3Modal #js {:wagmiConfig wagmiConfig,
+                      :projectId projectId,
+                      :chains chains})
+
+(def open (.-open (useWeb3Modal)))
 
 (defn mint []
   (go
@@ -146,17 +150,15 @@
   [:div {:style {:align-items "center"
                  :text-align "center";
                  :justify-content "center"}}
-   [:h1 "Wallet Connect V2 Test "]
+   [:h1 "Wallet Connect V3 Test !!!"]
    [:div
     [:> WagmiConfig {:config wagmiConfig}
-     [:> Web3Button]]
-    [:> Web3Modal {:projectId projectId
-                   :ethereumClient ethereumClient}]]
+    ;;  [:w3m-button] ;; their button
+     [:button {:on-click open} "Connect Wallet"]
+     [:br]
+     ]]
    [:br]
    [:button {:on-click signMessagee} "Click to Sign Message"]
-   [:br]
-   [:br]
-   [:button {:on-click Getaccounts} "get Accounts"]
    [:br]
    [:br]
    [:button {:on-click mint} "Mint some ALX tokens ;)"]

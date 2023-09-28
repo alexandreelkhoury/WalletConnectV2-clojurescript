@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$$web3modal$wagmi.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,wCAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,+CAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,uBAAf,GAAyCC,aAAA,CAAc,kBAAd,CAAzC;AACAC,6CAA8CC,CAAAA,OAA9C,GAAwDN,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,uBAAvE;;",
+"sources":["shadow.js.shim.module$$web3modal$wagmi.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$$web3modal$wagmi\");\ngoog.provide(\"module$shadow_js_shim_module$$web3modal$wagmi\");\nshadow.js.shim.module$$web3modal$wagmi = shadow$bridge(\"@web3modal/wagmi\");\nmodule$shadow_js_shim_module$$web3modal$wagmi.default = shadow.js.shim.module$$web3modal$wagmi;\n"],
+"names":["goog","provide","shadow","js","shim","module$$web3modal$wagmi","shadow$bridge","module$shadow_js_shim_module$$web3modal$wagmi","default"]
+}
