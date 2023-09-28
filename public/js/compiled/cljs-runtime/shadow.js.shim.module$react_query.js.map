@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$react_query.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,mCAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,0CAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,kBAAf,GAAoCC,aAAA,CAAc,aAAd,CAApC;AACAC,wCAAyCC,CAAAA,OAAzC,GAAmDN,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,kBAAlE;;",
+"sources":["shadow.js.shim.module$react_query.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$react_query\");\ngoog.provide(\"module$shadow_js_shim_module$react_query\");\nshadow.js.shim.module$react_query = shadow$bridge(\"react-query\");\nmodule$shadow_js_shim_module$react_query.default = shadow.js.shim.module$react_query;\n"],
+"names":["goog","provide","shadow","js","shim","module$react_query","shadow$bridge","module$shadow_js_shim_module$react_query","default"]
+}

@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$$walletconnect$ethereum_provider.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,wDAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,+DAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,uCAAf,GAAyDC,aAAA,CAAc,kCAAd,CAAzD;AACAC,6DAA8DC,CAAAA,OAA9D,GAAwEN,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,uCAAvF;;",
+"sources":["shadow.js.shim.module$$walletconnect$ethereum_provider.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$$walletconnect$ethereum_provider\");\ngoog.provide(\"module$shadow_js_shim_module$$walletconnect$ethereum_provider\");\nshadow.js.shim.module$$walletconnect$ethereum_provider = shadow$bridge(\"@walletconnect/ethereum-provider\");\nmodule$shadow_js_shim_module$$walletconnect$ethereum_provider.default = shadow.js.shim.module$$walletconnect$ethereum_provider;\n"],
+"names":["goog","provide","shadow","js","shim","module$$walletconnect$ethereum_provider","shadow$bridge","module$shadow_js_shim_module$$walletconnect$ethereum_provider","default"]
+}
