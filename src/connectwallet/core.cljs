@@ -103,6 +103,8 @@
                          :stateMutability "view",
                          :type "function"}])
 
+;; Configuration of  WC
+
 (def projectId "1cbe0854852010c65d1bcb8d218fc928")
 
 (def chains #js[arbitrum mainnet polygon polygonMumbai])
@@ -121,30 +123,36 @@
                            :projectId projectId,
                            :metadata metadata}))
 
+(createWeb3Modal #js {:wagmiConfig wagmiConfig,
+                      :projectId projectId,
+                      :chains chains})
+;; End of configuration
+
+
+
+(def network
+  #js{:view "Networks"})
+
 (defn signMessagee []
   (go
     (let [message "hello la team"
           result (<p! (signMessage #js{:message message}))]
-      (js/console.log result))))
+      (js/console.log "message signed !" result))))
 
 (defn Getaccounts []
   (let [account (getAccount)]
     (js/console.log account)))
 
-(createWeb3Modal #js {:wagmiConfig wagmiConfig,
-                      :projectId projectId,
-                      :chains chains})
-
-(def open (.-open (useWeb3Modal)))
+(def open (aget (useWeb3Modal) "open"))
 
 (defn mint []
   (go
-    (let [hash (<p! (.-hash (writeContract
+    (let [result (<p! (writeContract
                              #js
                               {:address contractAddress,
                                :abi contractABI,
-                               :functionName "mint"})))]
-      (js/console.log hash))))
+                               :functionName "mint"}))]
+      (js/console.log result))))
 
 (defn Application []
   [:div {:style {:align-items "center"
@@ -152,21 +160,26 @@
                  :justify-content "center"}}
    [:h1 "Wallet Connect V3 Test !!!"]
    [:div
+    [:h2 "My buttons"]
     [:> WagmiConfig {:config wagmiConfig}
-    ;;  [:w3m-button] ;; their button
-     [:button {:on-click open} "Connect Wallet"]
-     [:br]
-     ]]
+     [:button {:on-click #(open)} "Connect Wallet"]
+     [:button {:on-click #(open network)} "Change network"]]
+     [:br]]
+
+   [:div
+    [:h2 "WalletConnect's button"]
+    [:> WagmiConfig {:config wagmiConfig}
+     [:w3m-button ] ;; their button
+     [:br]]]
    [:br]
    [:button {:on-click signMessagee} "Click to Sign Message"]
    [:br]
    [:br]
+    [:button {:on-click Getaccounts} "get accounts"]
+   [:br]
+   [:br]
    [:button {:on-click mint} "Mint some ALX tokens ;)"]
-   [:h1 "To verify if the transaction passed successfuly go to your metamask and click on 'import tokens' then add the contract address : 0x61A153b3C68fE58738e8af19608D3418A8Ae05be."]
-   [:br]
-   [:h1 "Finally add the token's symbol : 'ALX' if not added automatically."]
-   [:br]
-   [:h1 "Your tokens should appear in your wallet !"]])
+   [:h2 "Open the console to see the results"]])
 
 (defn app []
   (let [container (js/document.getElementById  "app")
